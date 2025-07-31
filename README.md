@@ -11,7 +11,7 @@ Gluco-wAIse offers two main functionalities:
 
 1. **Conversational Q&A**: Users can ask questions about diabetes-related nutrition. The assistant uses a Retrieval-Augmented Generation (RAG) approach to search a custom-built knowledge base of Q&A pairs and respond accurately.
 
-2. **Visual Food Analysis (UI only)**: In the Chainlit web UI, users can upload images (e.g., of meals). The assistant uses a Vision Language Model (VLM) to analyze the image and evaluate whether the food aligns with diabetic dietary recommendations.
+2. **Visual Food Analysis (UI only)**: In the Chainlit web UI, users can upload food images (e.g., of meals). The assistant uses a Vision Language Model (VLM) to analyze the image and evaluate whether the food aligns with diabetic dietary recommendations.
 
    - PDF files can also be uploaded to dynamically update the knowledge base, which is embedded into a new FAISS vector store. This feature is still in development.
    - Optionally, the assistant can generate Word documents upon request using an integrated tool.
@@ -55,7 +55,7 @@ poetry install
 ### 4. Activate the Poetry virtual environment
 
 ```bash
-source deactivate && source $(poetry env info --path)/bin/activate
+conda deactivate && source $(poetry env info --path)/bin/activate
 ```
 
 ---
@@ -138,3 +138,32 @@ You will also be able to see the structure of the agent's graph and interact wit
 More information: [https://langchain-ai.github.io/langgraph/tutorials/langgraph-platform/local-server/](https://langchain-ai.github.io/langgraph/tutorials/langgraph-platform/local-server/)
 
 
+
+---
+
+## Project Structure
+
+```
+gluco-wAIse/
+├── data/
+│   ├── kb/
+│   └── word_outputs/
+├── gluco_wAIse/
+│   ├── agent.py
+│   ├── chainlit_app.py
+│   ├── langgraph.json
+|   ├── .env (needed to launch langgraph dev)
+│   ├── __init__.py
+│   ├── tests/
+│   │   └── __init__.py
+│   └── utils/
+│       ├── generate_doc.py
+│       ├── json_generator.py
+│       ├── rag_utils.py
+│       └── vectorstore_build.py
+├── vectorstore/
+│   └── food_kb_index/
+│       ├── index.faiss
+│       └── index.pkl
+├── .env
+```
