@@ -22,7 +22,8 @@ langchain-community = "^0.3.27"
 pypdf = "^5.9.0"
 
 [tool.poetry.scripts]
-run-agent = "gluco_waise.main:main"
+run-agent = "gluco_wAIse.agent:main"
+
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
