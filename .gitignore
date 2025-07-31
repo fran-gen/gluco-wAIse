@@ -1,0 +1,41 @@
+# Ignore Python cache
+__pycache__/
+
+# Ignore environment files
+.env
+
+# Ignore LangGraph API artifacts
+.langgraph_api/
+
+# Ignore everything in data except the folder itself
+data/*
+!data/
+
+# Ignore everything in vectorstore except the folder itself
+vectorstore/*
+!vectorstore/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore poetry files
+poetry.lock
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore Chainlit files
+.chainlit 
+chainlit.md
